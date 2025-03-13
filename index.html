@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>titulo aqui</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      body {
+        background-color: #FFF2F2;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
+  </head>
+  <body class="flex flex-col items-center min-h-screen p-6">
+    <header class="w-full py-6 text-white text-center rounded-lg" data-aos="fade-down">
+      <h1 class="text-4xl font-bold text-[#2D336B]">FRASE</h1>
+    </header>
+
+    <main class="w-full max-w-4xl">
+
+    <!-- Botão para Música -->
+      <section class="flex justify-center m-4" data-aos="fade-up">
+        <button
+          id="play-button"
+          class="bg-[#2D336B] text-white px-6 py-3 rounded-xl shadow-md hover:bg-[#7886C7] focus:outline-none"
+        >
+          🎵 Tocar Música
+        </button>
+        <audio id="romantic-music" src="pensando_em_voce.mp3" preload="auto"></audio>
+
+      </section>
+      <!-- Frase Inicial -->
+      <section class="text-center mb-10" data-aos="fade-up">
+        <h2 class="text-2xl font-semibold text-[#2D336B]">
+          INSERIR UMA FRASE AQUI
+        </h2>
+      </section>
+
+      <!-- Galeria de Fotos com Frases -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-[#2D336B] relative overflow-hidden rounded-xl shadow-lg" data-aos="fade-up">
+          <img src="./images/foto1.jpeg" alt="Primeiro encontro" class="w-full object-cover" />
+          <p class="text-center text-[#A9B5DF] m-2 italic">frase</p>
+        </div>
+        <div class="bg-[#2D336B] relative overflow-hidden rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+          <img src="./images/foto2.jpeg" alt="Pandemia" class="w-full object-cover" />
+          <p class="text-center text-[#A9B5DF] m-2 italic">frase</p>
+        </div>
+        <div class="bg-[#2D336B] relative overflow-hidden rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <img src="./images/foto3.jpeg" alt="Saídas" class="w-full object-cover" />
+          <p class="text-center text-[#A9B5DF] m-2 italic">frase</p>
+        </div>
+        <div class="bg-[#2D336B] relative overflow-hidden rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+            <img src="./images/foto4.jpeg" alt="Posse" class="w-full object-cover" />
+            <p class="text-center text-[#A9B5DF] m-2 italic">frase</p>
+        </div>
+        <div class="bg-[#2D336B] relative overflow-hidden rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+          <img src="./images/foto5.jpeg" alt="Aniversário" class="w-full object-cover" />
+          <p class="text-center text-[#A9B5DF] m-2 italic">frase</p>
+        </div>
+        <div class="bg-[#2D336B] relative overflow-hidden rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+          <img src="./images/foto6.jpeg" alt="Viagem" class="w-full object-cover" />
+          <p class="text-center text-[#A9B5DF] m-2 italic">frase</p>
+        </div>
+        <div class="bg-[#2D336B] relative overflow-hidden rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+          <img src="./images/foto7.jpeg" alt="Ida" class="w-full object-cover" />
+          <p class="text-center text-[#A9B5DF] m-2 italic">frase</p>
+        </div>
+      </section>
+
+      <!-- Frase Especial -->
+      <section class="bg-[#2D336B] rounded-xl shadow-lg mt-10 text-center p-2" data-aos="fade-up">
+        <p class="text-center text-[#A9B5DF] m-2 italic">
+          mais outra frase
+        </p>
+        <p class="text-center text-[#A9B5DF] m-2 italic">
+            mais uma frase <br/>
+            outra frase se quiser
+        </p>
+      </section>
+
+
+    </main>
+
+    <footer class="mt-12 text-sm text-center text-[#2D336B]">
+      Feito com ❤️
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      
+      const playButton = document.getElementById('play-button');
+      const audio = document.getElementById('romantic-music');
+      let isPlaying = false;
+
+      playButton.addEventListener('click', () => {
+        if (isPlaying) {
+          audio.pause();
+          playButton.textContent = '🎵 Tocar Música';
+        } else {
+          audio.play();
+          playButton.textContent = '⏸️ Pausar Música';
+        }
+        isPlaying = !isPlaying;
+      });
+    </script>
+  </body>
+</html>
